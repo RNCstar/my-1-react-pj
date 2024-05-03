@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { ImEyeBlocked } from "react-icons/im";
+import { useState } from "react";
 function App() {
+  const [type, setType] = useState("password");
+  const [icon, setIcon] = useState("none");
+  const handleClick = () => {
+    if (type === "password") {
+      setType("text");
+    } else {
+      setType("password");
+    }
+    if (icon === "none") {
+      setIcon("block");
+    } else {
+      setIcon("none");
+    }
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="wrapper">
+        <div className="input-fields">
+          <span onClick={handleClick}>
+            <ImEyeBlocked style={{ fontSize: "30px" }} />
+          </span>
+          <input type={type} />
+        </div>
+      </div>
     </div>
   );
 }
