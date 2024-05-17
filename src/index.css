@@ -10,37 +10,38 @@
 body {
   direction: rtl;
   font-family: "vazir" !important;
-}
-
-.wrapper {
+  height: 100vh;
   display: flex;
+  padding: 100px 0;
+  background-color: aliceblue;
   justify-content: center;
   align-items: center;
-  background-color: #ffe3f6;
-  width: 100vw;
-  height: 100vh;
 }
 
-.input-fields {
-  width: 330px;
-  height: 55px;
-  background-color: #fff;
-  border-radius: 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
+.section-center {
+  width: 600px;
 }
 
-.input-fields input {
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
+.section-center h4 {
+  font-size: 25px;
+  padding: 30px 0;
+
+}
+
+.section-center input {
+  border: 1px solid #fff12f;
+  padding: 7px;
+  margin-right: 10px;
+}
+
+.section-center button {
+  background-color: rgb(255, 71, 71);
   border: none;
-  font-style: 18px;
-  direction: ltr;
-}
-
-.input-fields span {
+  color: #fff;
   cursor: pointer;
+  padding: 10px;
+  margin: 20px;
+  font-size: 22px;
+  font-weight: bolder;
+  width: 100px;
 }
