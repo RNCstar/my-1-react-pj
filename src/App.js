@@ -1,33 +1,32 @@
-import datas from "./data";
 import { useState } from "react";
 import data from "./data";
 function App() {
+  const [getCount, setCount] = useState(0);
+  const [getText, setText] = useState([]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(getCount);
+    setText(data);
+  };
   return (
     <div className="App section-center">
       <h4>لورم ساز ما </h4>
-      <form className="lorem">
-        <lable for="loremNO" id="LoremNO">
-          تعداد پاراگراف
-        </lable>
-        <input type="number" />
-        <button type="button" className="makeIt">
+      <form className="lorem" onSubmit={handleSubmit}>
+        <lable id="LoremNO">تعداد پاراگراف</lable>
+        <input
+          type="number"
+          name="total"
+          value={getCount}
+          onChange={(elem) => setCount(elem.target.value)}
+        />
+        <button type="submit" className="makeIt">
           بساز
         </button>
       </form>
       <article className="lorem-text-box">
-        <p className="lorem-text">
-          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-          استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
-          ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
-          کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
-          در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می
-          طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی
-          الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این
-          صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و
-          شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای
-          اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده
-          قرار گیرد.
-        </p>
+        {getText.map((text, index) => {
+          return <p key={index}>{text}</p>;
+        })}
       </article>
     </div>
   );

@@ -10,7 +10,6 @@
 body {
   direction: rtl;
   font-family: "vazir" !important;
-  height: 100vh;
   display: flex;
   padding: 100px 0;
   background-color: aliceblue;
@@ -44,4 +43,8 @@ body {
   font-size: 22px;
   font-weight: bolder;
   width: 100px;
+}
+
+.section-center p {
+  margin-top: 50px;
 }
