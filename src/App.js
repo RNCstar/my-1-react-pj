@@ -5,8 +5,17 @@ function App() {
   const [getText, setText] = useState([]);
   const handleSubmit = (e) => {
     e.preventDefault();
+    let amount = parseInt(getCount);
     console.log(getCount);
-    setText(data);
+    if (getCount <= 0 || getCount > 4) {
+      alert("Please enter a count between 0 and 4");
+    }
+    if (getCount <= 0) {
+      amount = 1;
+    } else if (getCount > 4) {
+      amount = 4;
+    }
+    setText(data.slice(0, amount));
   };
   return (
     <div className="App section-center">
